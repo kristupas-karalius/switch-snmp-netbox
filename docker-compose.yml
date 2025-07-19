@@ -1,0 +1,14 @@
+
+services:
+  net-discover:
+    build:
+      context: .
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    network_mode: "host"
+    environment:
+      - NETBOX_TOKEN= # netbox access token
+      - NETBOX_URL= # http:linktonetbox:port/api/
+      - SNMP_VERSION= # snmp version
+      - COMMUNITY= # snmp community key
